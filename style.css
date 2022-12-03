@@ -1,0 +1,90 @@
+:root {
+    --white: white;
+    --black: black;
+    --gray: #d8d9db;
+    --gray-hoover: #ebebeb;
+    --gray-active: #bbbcbe;
+    --orange: #df974c;
+    --orange-hoover: #dfb07e;
+    --orange-active: #dd8d37;
+}
+
+/* Generics */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Courier New", Courier, monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Calculator */
+
+.calc {
+    width: 400px;
+    background-color: var(--black);
+    color: var(--white);
+    display: grid;
+    row-gap: 3px;
+    column-gap: 3px;
+    margin-bottom: 0.1em;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.calc-screen {
+    color: var(--white);
+    font-size: 40px;
+    text-align: right;
+    padding: 20px 5px;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.span-3 {
+    grid-column: span 3;
+}
+
+.span-4 {
+    grid-column: span 4;
+}
+
+/* Buttons */
+
+.btn {
+    height: 100px;
+    border: none;
+    border-radius: 0;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--gray-hoover);
+}
+
+.btn:active {
+    background-color: var(--gray-active);
+}
+
+.btn-orange {
+    background-color: var(--orange);
+    color: var(--white)
+}
+
+.btn-gray {
+    background-color: var(--gray);
+    color: var(--black);
+}
+
+.btn-orange:hover {
+    background-color: var(--orange-hoover);
+}
+
+.btn-orange:active {
+    background-color: var(--orange-active);
+}
