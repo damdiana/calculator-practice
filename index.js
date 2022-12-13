@@ -13,64 +13,109 @@ let btnAddition = document.querySelector('#btn-addition');
 let btnDivision = document.querySelector('#btn-division');
 let btnMultiplication = document.querySelector('#btn-multiplication');
 
-let operation;
+let operation = undefined;
 
 let nr1 = 0;
 
-btn1.addEventListener('click', function () {
-    nr1 = nr1 * 10 + 1;
-    console.log(nr1);
+let nr2 = 0;
 
+
+
+btn1.addEventListener('click', function () {
+    if (operation === undefined) {
+        nr1 = nr1 * 10 + 1;
+        console.log('nr1', nr1);
+    } else {
+        nr2 = nr2 * 10 + 1;
+        console.log('nr2', nr2);
+    }
 });
 
 btn2.addEventListener('click', function () {
-    nr1 = nr1 * 10 + 2;
-    console.log(nr1);
+    if (operation === undefined) {
+        nr1 = nr1 * 10 + 2;
+        console.log('nr1', nr1);
+    } else {
+        nr2 = nr2 * 10 + 2;
+        console.log('nr2', nr2);
+    }
 });
 
 btn3.addEventListener('click', function () {
-    nr1 = nr1 * 10 + 3;
-    console.log(nr1);
+    if (operation === undefined) {
+        nr1 = nr1 * 10 + 3;
+        console.log('nr1', nr1);
+    } else {
+        nr2 = nr2 * 10 + 3;
+        console.log('nr2', nr2);
+    }
 });
 
 btn4.addEventListener('click', function () {
-    nr1 = nr1 * 10 + 4;
-    console.log(nr1);
-
+    if (operation === undefined) {
+        nr1 = nr1 * 10 + 4;
+        console.log('nr1', nr1);
+    } else {
+        nr2 = nr2 * 10 + 4;
+        console.log('nr2', nr2);
+    }
 });
 
 btn5.addEventListener('click', function () {
-    nr1 = nr1 * 10 + 5;
-    console.log(nr1);
-
+    if (operation === undefined) {
+        nr1 = nr1 * 10 + 5;
+        console.log('nr1', nr1);
+    } else {
+        nr2 = nr2 * 10 + 5;
+        console.log('nr2', nr2);
+    }
 });
 
 btn6.addEventListener('click', function () {
-    nr1 = nr1 * 10 + 6;
-    console.log(nr1);
-
+    if (operation === undefined) {
+        nr1 = nr1 * 10 + 6;
+        console.log('nr1', nr1);
+    } else {
+        nr2 = nr2 * 10 + 6;
+        console.log('nr2', nr2);
+    }
 });
 
 btn7.addEventListener('click', function () {
-    nr1 = nr1 * 10 + 7;
-    console.log(nr1);
-
+    if (operation === undefined) {
+        nr1 = nr1 * 10 + 7;
+        console.log('nr1', nr1);
+    } else {
+        nr2 = nr2 * 10 + 7;
+        console.log('nr2', nr2);
+    }
 });
 
-btn8.addEventListener('click', function () {
-    nr1 = nr1 * 10 + 8;
-    console.log(nr1);
 
+btn8.addEventListener('click', function () {
+    if (operation === undefined) {
+        nr1 = nr1 * 10 + 8;
+        console.log('nr1', nr1);
+    } else {
+        nr2 = nr2 * 10 + 8;
+        console.log('nr2', nr2);
+    }
 });
 
 btn9.addEventListener('click', function () {
-    nr1 = nr1 * 10 + 9;
-    console.log(nr1);
-
+    if (operation === undefined) {
+        nr1 = nr1 * 10 + 9;
+        console.log('nr1', nr1);
+    } else {
+        nr2 = nr2 * 10 + 9;
+        console.log('nr2', nr2);
+    }
 });
 
 btnClear.addEventListener('click', function () {
     nr1 = 0;
+    nr2 = 0;
+    operation = undefined;
     console.log(nr1);
 
 });
@@ -94,3 +139,4 @@ btnMultiplication.addEventListener('click', function () {
     operation = '*';
     console.log(operation);
 })
+
