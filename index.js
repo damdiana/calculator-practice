@@ -15,6 +15,7 @@ let btnDivision = document.querySelector('#btn-division');
 let btnMultiplication = document.querySelector('#btn-multiplication');
 let btnEqual = document.querySelector('#btn-equal');
 let calcScreen = document.querySelector('.calc-screen');
+let btnBack = document.querySelector('#btn-back');
 
 let operation = undefined;
 let nr1 = 0;
@@ -72,7 +73,7 @@ btnEqual.addEventListener('click', function () {
         case "+":
             result = nr1 + nr2;
             break;
-        case "-":
+        case "-": g
             result = nr1 - nr2;
             break;
         case "*":
@@ -84,6 +85,24 @@ btnEqual.addEventListener('click', function () {
         default: alert("Please contact us!");
     }
     calcScreen.innerHTML = result;
-
-
 })
+
+btnBack.addEventListener('click', function () {
+    if (operation === undefined) {
+        if (nr1 < 10) {
+            nr1 = 0;
+        } else {
+            nr1 = Math.floor(nr1 / 10);
+        }
+        calcScreen.innerHTML = nr1;
+        console.log(nr1);
+    } else {
+        if (nr2 < 10) {
+            nr2 = 0;
+        } else {
+            nr2 = Math.floor(nr2 / 10);
+        }
+        calcScreen.innerHTML = nr2;
+        console.log(nr2);
+    }
+});
