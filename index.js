@@ -55,29 +55,16 @@ btnClear.addEventListener('click', function () {
 
 });
 
-btnSubtraction.addEventListener('click', function () {
-    operation = '-';
-    calcScreen.innerHTML = operation;
-    console.log(operation);
-});
+btnSubtraction.addEventListener('click', onOperationClick);
+btnAddition.addEventListener('click', onOperationClick);
+btnDivision.addEventListener('click', onOperationClick);
+btnMultiplication.addEventListener('click', onOperationClick);
 
-btnAddition.addEventListener('click', function () {
-    operation = '+';
+function onOperationClick(event) {
+    operation = event.currentTarget.getAttribute("data-operation");
     calcScreen.innerHTML = operation;
     console.log(operation);
-})
-
-btnDivision.addEventListener('click', function () {
-    operation = "/";
-    calcScreen.innerHTML = operation;
-    console.log(operation);
-})
-
-btnMultiplication.addEventListener('click', function () {
-    operation = '*';
-    calcScreen.innerHTML = operation;
-    console.log(operation);
-})
+}
 
 btnEqual.addEventListener('click', function () {
     let result;
