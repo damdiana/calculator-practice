@@ -22,6 +22,7 @@ body {
 }
 
 * {
+
     box-sizing: border-box;
 }
 
@@ -44,6 +45,7 @@ body {
     font-size: 40px;
     text-align: right;
     padding: 20px 5px;
+
 }
 
 .span-2 {
@@ -92,4 +94,17 @@ body {
 
 .btn-orange:active {
     background-color: var(--orange-active);
+}
+
+.btn-black {
+    background-color: var(--black);
+    color: var(--gray);
+}
+
+.btn-black:hover {
+    color: var(--black);
+}
+
+.btn-history {
+    font-size: 2em;
 }
