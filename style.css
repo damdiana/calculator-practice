@@ -38,6 +38,21 @@ body {
     column-gap: 3px;
     margin-bottom: 0.1em;
     grid-template-columns: repeat(4, 1fr);
+    position: relative;
+}
+
+
+.calc-history {
+    position: absolute;
+    z-index: 9999;
+    width: 400px;
+    height: 70%;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.hidden {
+    display: none;
 }
 
 .calc-screen {
@@ -45,7 +60,6 @@ body {
     font-size: 40px;
     text-align: right;
     padding: 20px 5px;
-
 }
 
 .span-2 {
