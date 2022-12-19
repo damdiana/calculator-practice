@@ -21,6 +21,10 @@ let operation = undefined;
 let nr1 = 0;
 let nr2 = 0;
 
+const btnHistory = document.querySelector('#show-history');
+const calcHistory = document.querySelector('.calc-history');
+let isHistoryToggled = false;
+
 btn1.addEventListener('click', onDigitClick);
 btn2.addEventListener('click', onDigitClick);
 btn3.addEventListener('click', onDigitClick);
@@ -43,7 +47,6 @@ function onDigitClick(event) {
         nr2 = nr2 * 10 + digit;
         calcScreen.innerHTML = nr2;
         console.log(nr2);
-
     }
 }
 
@@ -53,7 +56,6 @@ btnClear.addEventListener('click', function () {
     operation = undefined;
     calcScreen.innerHTML = 0;
     console.log(nr1);
-
 });
 
 btnSubtraction.addEventListener('click', onOperationClick);
@@ -106,3 +108,15 @@ btnBack.addEventListener('click', function () {
         console.log(nr2);
     }
 });
+
+btnHistory.addEventListener("click", function () {
+    isHistoryToggled = !isHistoryToggled;
+    calcHistory.classList.toggle('hidden');
+
+    if (isHistoryToggled) {
+        btnHistory.textContent = 'Hide History';
+    } else {
+        btnHistory.textContent = 'Show History';
+    }
+});
+
