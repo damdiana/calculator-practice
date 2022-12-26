@@ -30,7 +30,6 @@ body {
 
 .calc {
     width: 400px;
-    height: fit-content;
     background-color: var(--black);
     color: var(--white);
     display: grid;
@@ -107,4 +106,12 @@ body {
 
 .btn-history {
     font-size: 2em;
+}
+
+/* media query */
+
+@media screen and (max-width: 500px) {
+    .btn {
+        font-size: 25px;
+    }
 }
