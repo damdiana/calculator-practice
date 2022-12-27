@@ -40,12 +40,12 @@ body {
     position: relative;
 }
 
-
 .calc-history {
     position: absolute;
     z-index: 9999;
-    width: 400px;
-    height: 70%;
+    width: 100%;
+    top: 0;
+    bottom: 100px;
     background-color: var(--black);
     color: var(--white);
 }
