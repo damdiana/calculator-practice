@@ -23,6 +23,8 @@ let nr2 = 0;
 
 const btnHistory = document.querySelector('#show-history');
 const calcHistory = document.querySelector('.calc-history');
+const historyParent = document.querySelector('#historyParent');
+
 let isHistoryToggled = false;
 
 btn1.addEventListener('click', onDigitClick);
@@ -87,7 +89,23 @@ btnEqual.addEventListener('click', function () {
         default: alert("Please contact us!");
     }
     calcScreen.innerHTML = result;
+
+    let existingCalculations = getPreviousCalculations();
+
+    existingCalculations.push(`${nr1} ${operation} ${nr2} = ${result}`);
+
+    localStorage.setItem("calculations", JSON.stringify(existingCalculations));
 })
+
+function getPreviousCalculations() {
+
+    let localStorageHistory = localStorage.getItem('calculations');
+    let calculationArray = [];
+    if (localStorageHistory !== null) {
+        calculationArray = JSON.parse(localStorageHistory);
+    }
+    return calculationArray;
+}
 
 btnBack.addEventListener('click', function () {
     if (operation === undefined) {
@@ -118,5 +136,14 @@ btnHistory.addEventListener("click", function () {
     } else {
         btnHistory.textContent = 'Show History';
     }
+
+    historyParent.innerHTML = null;
+    let history = getPreviousCalculations();
+    history.forEach(x => {
+        let newParagraph = document.createElement("p");
+        newParagraph.innerText = x;
+        historyParent.appendChild(newParagraph);
+    })
+
 });
 
