@@ -52,14 +52,7 @@ function onDigitClick(event) {
     }
 }
 
-btnClear.addEventListener('click', function () {
-    nr1 = 0;
-    nr2 = 0;
-    operation = undefined;
-    calcScreen.innerHTML = 0;
-    console.log(nr1);
-});
-
+btnClear.addEventListener('click', resetCalculator);
 btnSubtraction.addEventListener('click', onOperationClick);
 btnAddition.addEventListener('click', onOperationClick);
 btnDivision.addEventListener('click', onOperationClick);
@@ -88,6 +81,7 @@ btnEqual.addEventListener('click', function () {
             break;
         default: alert("Please contact us!");
     }
+    resetCalculator();
     calcScreen.innerHTML = result;
 
     let existingCalculations = getPreviousCalculations();
@@ -147,3 +141,9 @@ btnHistory.addEventListener("click", function () {
 
 });
 
+function resetCalculator() {
+    nr1 = 0;
+    nr2 = 0;
+    operation = undefined;
+    calcScreen.innerHTML = 0;
+}
