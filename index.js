@@ -84,7 +84,16 @@ btnEqual.addEventListener('click', function () {
             break;
         default: alert("Please contact us!");
     }
-    calcScreen.innerHTML = result;
+
+    /**
+     * We want to show maximum 5 decimals for our results.
+     * Unfortunetly `toPrecision()` isn't what we want because
+     * it will add 5 decimal points to all numbers, including
+     * integers (eg: instead of 5, it will display 5.0000).
+     * We want 5 decimal numbers only if the result has
+     * more than that, that's why we are doing this calculation.
+     */
+    calcScreen.innerHTML = Math.round(result * 10 ** 5) / 10 ** 5;
 
     let existingCalculations = getPreviousCalculations();
 
