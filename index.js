@@ -52,7 +52,10 @@ function onDigitClick(event) {
     }
 }
 
-btnClear.addEventListener('click', resetCalculator);
+btnClear.addEventListener('click', function () {
+    resetCalculator();
+    calcScreen.innerHTML = 0;
+});
 btnSubtraction.addEventListener('click', onOperationClick);
 btnAddition.addEventListener('click', onOperationClick);
 btnDivision.addEventListener('click', onOperationClick);
@@ -81,7 +84,6 @@ btnEqual.addEventListener('click', function () {
             break;
         default: alert("Please contact us!");
     }
-    resetCalculator();
     calcScreen.innerHTML = result;
 
     let existingCalculations = getPreviousCalculations();
@@ -89,6 +91,7 @@ btnEqual.addEventListener('click', function () {
     existingCalculations.push(`${nr1} ${operation} ${nr2} = ${result}`);
 
     localStorage.setItem("calculations", JSON.stringify(existingCalculations));
+    resetCalculator();
 })
 
 function getPreviousCalculations() {
@@ -145,5 +148,4 @@ function resetCalculator() {
     nr1 = 0;
     nr2 = 0;
     operation = undefined;
-    calcScreen.innerHTML = 0;
 }
