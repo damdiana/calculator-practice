@@ -49,6 +49,7 @@ body {
     bottom: 100px;
     background-color: var(--black);
     color: var(--white);
+    padding: 2em;
 }
 
 .hidden {
